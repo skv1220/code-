@@ -1,0 +1,15 @@
+ public function userlist()
+    {
+    	$User = User::get()->toJson(JSON_PRETTY_PRINT);
+        return response($User, 200);
+    }
+    public function user($id) {
+    if (User::where('id', $id)->exists()) {
+        $User = User::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+        return response($User, 200);
+      } else {
+        return response()->json([
+          "message" => "User not found"
+        ], 404);
+      }
+    }
