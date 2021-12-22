@@ -1,0 +1,4 @@
+$url = $request['video_url'];
+		$value = explode("v=", $url);
+		//DD($value);
+		$videoId = $value[1];
