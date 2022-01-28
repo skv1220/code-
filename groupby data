@@ -1,0 +1,6 @@
+ $data = DB::table('project_master')
+                ->select('project_master.id','project_master.project_name',DB::raw('count(leads.id) as leads'))->leftjoin('leads','leads.project_id','=','project_master.id')
+                ->where('project_master.user_id',Auth::user()->id)
+                ->groupby('project_master.id')
+                ->get();
+                DD($data);
