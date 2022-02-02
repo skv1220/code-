@@ -1,0 +1,19 @@
+let client = navigator.userAgent.toLowerCase(),
+    isLinux = client.indexOf("linux") > -1,
+    isWin = client.indexOf("windows") > -1,
+    isMac = client.indexOf("apple") > -1,
+    isFirefox = client.indexOf("firefox") > -1,
+    isWebkit = client.indexOf("webkit") > -1,
+    isOpera = client.indexOf("opera") > -1,
+    input = document.getElementById('guestInput');
+
+if(isFirefox) {
+   input.setAttribute("placeholder", "ALT+SHIFT+Z");
+} else if (isWin) {
+   input.setAttribute("placeholder", "ALT+Z");
+} else if (isMac) {
+  input.setAttribute("placeholder", "CTRL+ALT+Z");
+} else if (isOpera) {
+  input.setAttribute("placeholder", "SHIFT+ESCAPE->Z");
+} else {'Point me to operate...'}
+<input type="text" id="guestInput" accesskey="z" placeholder="Acces shortcut:"></input>
