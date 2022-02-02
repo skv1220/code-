@@ -1,19 +1,14 @@
-let client = navigator.userAgent.toLowerCase(),
-    isLinux = client.indexOf("linux") > -1,
-    isWin = client.indexOf("windows") > -1,
-    isMac = client.indexOf("apple") > -1,
-    isFirefox = client.indexOf("firefox") > -1,
-    isWebkit = client.indexOf("webkit") > -1,
-    isOpera = client.indexOf("opera") > -1,
-    input = document.getElementById('guestInput');
+function myFunction(event) {
+  var x = event.charCode;
+  document.getElementById("demo").innerHTML = "The Unicode value is: " + x;
+}
+<p>Keycode 13 is: </p> 
+<button>Enter</button>
+<p>Press a key on the keyboard in the input field to get the Unicode character code of the pressed key.</p>
+<b>You can test in below</b>
 
-if(isFirefox) {
-   input.setAttribute("placeholder", "ALT+SHIFT+Z");
-} else if (isWin) {
-   input.setAttribute("placeholder", "ALT+Z");
-} else if (isMac) {
-  input.setAttribute("placeholder", "CTRL+ALT+Z");
-} else if (isOpera) {
-  input.setAttribute("placeholder", "SHIFT+ESCAPE->Z");
-} else {'Point me to operate...'}
-<input type="text" id="guestInput" accesskey="z" placeholder="Acces shortcut:"></input>
+<input type="text" size="40" onkeypress="myFunction(event)">
+
+<p id="demo"></p>
+
+<p><strong>Note:</strong> The charCode property is not supported in IE8 and earlier versions.</p>
