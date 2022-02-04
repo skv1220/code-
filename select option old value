@@ -1,0 +1,1 @@
+<option value="M" @if (old('gender') == "M") {{ 'selected' }} @endif>Male</option>
