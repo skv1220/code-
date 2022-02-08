@@ -1,0 +1,38 @@
+Step 1: Install yoeunes/toastr package
+$ composer require yoeunes/toastr
+'providers' => [
+    ...
+    Yoeunes\Toastr\ToastrServiceProvider::class
+    ...
+];
+php artisan vendor:publish --provider='Yoeunes\Toastr\ToastrServiceProvider'
+Step 2: Create View
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Laravel 6 Toastr Notifications using yoeunes/toastr package - codingspoint.com </title>
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+   @toastr_css
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <div class="card">
+                <div class="card-header text-center ">
+                    Laravel 6 Toastr Notifications using yoeunes/toastr package  - Codingspoint.com
+                </div>
+                <div class="card-body text-center p-5">
+                    Check For Toastr Notification
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+@jquery
+@toastr_js
+@toastr_render
+</html>
+Step 3: Create View
+create controller and rooute
